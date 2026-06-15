@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Séquence 5.1 : Le Collège Connecté - Dossier Pédagogique Approfondi 5ème</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">FP-5.1</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Fiche Pédagogique Enseignant - Contenu Haute Densité</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Niveau :</strong> 5ème (Cycle 4)</p>
+                    <p><strong>Effectif :</strong> 25-30 él. (14 PC)</p>
+                    <p><strong>Fil conducteur :</strong> IoT & Smart Building</p>
+                </td>
+            </tr>
+        </table>
+
+        <h3>1. Problématique, Alignement BO & Objectifs Cognitifs</h3>
+        <p><strong>Situation déclenchante :</strong> Le collège doit réduire de 15% sa consommation électrique. Les luminaires de la salle de technologie ont été remplacés par un système IoT intelligent. Comment ce dispositif prend-il ses décisions localement et comment rend-il compte de son état sur le réseau de l'établissement ?</p>
+        <ul>
+            <li><strong>Notions fondamentales :</strong> Topologie réseau (étoile), Adressage IP statique et dynamique (DHCP), Masque de sous-réseau, Composants de la chaîne d'information (Acquisition analogique vs numérique), Algorithmique conditionnelle complexe et variables d'état.</li>
+        </ul>
+
+        <h3>2. Logistique & Ressources Matérielles</h3>
+        <ul>
+            <li><strong>Infrastructure :</strong> 14 postes connectés à un switch manageable (VLAN d'expérimentation pédagogique dédié). Outils de diagnostic réseau (invite de commande ping / tracert).</li>
+            <li><strong>Matériel de maquettage :</strong> 4 stations réelles basées sur microcontrôleur (type ESP32 ou Arduino équipé d'un shield réseau), capteur de présence (PIR - capteur logique), capteur de luminosité (LDR - capteur analogique), module actionneur relais et régulateur PWM pour la modulation des LED.</li>
+        </ul>
+
+        <h3>3. Scénarisation Chronométrée et Articulation des Activités</h3>
+        <table class="content-table">
+            <tr>
+                <th style="width:12%;">Séance</th>
+                <th style="width:23%;">Phases & Durée</th>
+                <th style="width:65%;">Détail des Recherches Élèves & Objectifs Techniques</th>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>S1 (1h30)<br>Ingénierie des réseaux</strong></td>
+                <td>Lancement (15 min)</td>
+                <td>Analyse de la facture d'électricité du collège. Présentation des boîtiers connectés installés au plafond. Problématique du transit des trames.</td>
+            </tr>
+            <tr>
+                <td>Recherche (60 min)</td>
+                <td><strong>ACT-5.1 (Partie 1) :</strong> Investigation concrète dans la classe. Repérage physique des prises RJ45, cheminement des câbles. Simulation logicielle de paquets et relevés de configurations IP réelles (Commandes IPCONFIG). Calcul d'adresses réseau.</td>
+            </tr>
+            <tr>
+                <td>Synthèse (15 min)</td>
+                <td>Modélisation de la topologie en étoile. Structuration : commutateur, passerelle, masque et identifiant réseau.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>S2 (1h30)<br>Chaîne d'info approfondie</strong></td>
+                <td>Rappel (10 min)</td>
+                <td>Liaison S1-S2 : Comment les données physiques captées se transforment en paquets réseau numériques circulant sur l'infrastructure étudiée en S1.</td>
+            </tr>
+            <tr>
+                <td>Investigation (65 min)</td>
+                <td><strong>ACT-5.1 (Partie 2) :</strong> Modélisation fonctionnelle avancée. Identification de la nature des signaux (analogiques pour la lumière, logiques pour la détection). Étude des convertisseurs de la carte. Rédaction technique des rôles et codification des flux d'entrée/sortie.</td>
+            </tr>
+            <tr>
+                <td>Bilan (15 min)</td>
+                <td>Mise en équation de la chaîne d'information. Distinction claire entre Capteur, Interface de traitement et Organe de communication.</td>
+            </tr>
+            <tr>
+                <td rowspan="3"><strong>S3 (1h30)<br>Algorithmique et lois d'allumage</strong></td>
+                <td>Briefing (10 min)</td>
+                <td>Organisation de l'espace de laboratoire en deux pôles d'expérimentation complémentaires (Pôle Virtuel / Pôle Physique). Changement de pôle à t = 40 min.</td>
+            </tr>
+            <tr>
+                <td>Ateliers (70 min)</td>
+                <td>
+                    <strong>Pôle A (Développement) :</strong> Écriture et test de robustesse de l'algorithme sous forme de blocs. Gestion des variables de seuil d'éclairement (hystérésis) et de temporisation.<br>
+                    <strong>Pôle B (Maquettage Hardware) :</strong> Téléversement du code, étalonnage de la photorésistance face aux variations de lumière ambiante, mesures physiques au multimètre.
+                </td>
+            </tr>
+            <tr>
+                <td>Bilan (10 min)</td>
+                <td>Auto-évaluation finale. Remplissage rigoureux du tableau de validation des compétences (SYN-5.1).</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>S4 (1h30)<br>Évaluation & Remédiation</strong></td>
+                <td>Sommatif (45 min)</td>
+                <td><strong>Évaluation individuelle EV-5.1 :</strong> Analyse d'un système pluri-technologique autonome (Régulation thermique et gestion du store motorisé connecté d'une serre connectée).</td>
+            </tr>
+            <tr>
+                <td>Remédiation (45 min)</td>
+                <td>Analyse des erreurs types de routage réseau et de logique algorithmique. Activité de correction par les pairs.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">SYN-5.1</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Livre de Cours & Référentiel de Compétences Scientifiques</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Classe :</strong> 5ème .............</p>
+                    <p><strong>Nom :</strong> ...................................</p>
+                    <p><strong>Prénom :</strong> ..............................</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="blockquote-memo">
+            <h4>🎯 Suivi de mes Objectifs d'Apprentissage Technologiques</h4>
+            <p class="dys-text">Ce livret consigne les notions d'ingénierie que tu dois maîtriser. Utilise ce tableau d'auto-évaluation pour suivre la validation de tes compétences avec ton enseignant :</p>
+            <table style="width:100%; border-collapse:collapse; margin-top:10px; font-size:0.9rem;">
+                <thead>
+                    <tr style="border-bottom:2px solid #2980b9;">
+                        <th style="text-align:left; padding:6px;">Compétences d'Ingénierie et de Design</th>
+                        <th style="text-align:center; padding:6px; width:12%;">Séance 1</th>
+                        <th style="text-align:center; padding:6px; width:12%;">Séance 2</th>
+                        <th style="text-align:center; padding:6px; width:12%;">Séance 3</th>
+                        <th style="text-align:center; padding:6px; width:15%;">Positionnement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:10px;"><strong>C1 : Architecture des Réseaux -</strong> Analyser la topologie d'un réseau local (LAN), comprendre l'utilité des adresses IP, du masque et du routage des trames d'un objet IoT.</td>
+                        <td style="text-align:center;">Exploration</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">⬜ I / F / S / TB</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:10px;"><strong>C2 : Modélisation des Flux -</strong> Identifier les fonctions techniques d'une chaîne d'information. Différencier la nature des signaux d'entrée (analogiques et logiques).</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">Exploration</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">⬜ I / F / S / TB</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:10px;"><strong>C3 : Algorithmique Avancée -</strong> Structurer un programme de commande intégrant des variables numériques, des seuils de tolérance et des opérateurs logiques cumulatifs (ET / OU).</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">-</td>
+                        <td style="text-align:center;">Exploration</td>
+                        <td style="text-align:center;">⬜ I / F / S / TB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>1. Infrastructure et Adressage Réseau (LAN)</h3>
+        <p class="dys-text">Un <strong>Réseau Local (LAN)</strong> interconnecte les équipements informatiques d'une zone limitée (comme notre collège). La topologie utilisée est en <strong>étoile</strong> : chaque équipement est connecté individuellement à un <strong>commutateur (Switch)</strong> central par un câble Ethernet (RJ45) ou une liaison sans fil (Wi-Fi). Le switch lit l'adresse matérielle (MAC) pour acheminer les données exclusivement au bon destinataire.</p>
+        <p class="dys-text">Pour communiquer en utilisant le protocole Internet, chaque machine possède une <strong>adresse IP</strong> unique (ex: <code>192.168.1.50</code>). Le <strong>masque de sous-réseau</strong> (ex: <code>255.255.255.0</code>) permet de séparer l'adresse en deux parties : l'identifiant du réseau commun et l'identifiant de la machine. Si un objet IoT doit envoyer des données à l'extérieur du collège (serveur cloud), il transmet ses paquets à la <strong>passerelle (Routeur)</strong>.</p>
+
+        <h3>2. Structure d'un Objet Connecté : La Chaîne d'Information</h3>
+        <p class="dys-text">Pour interagir intelligemment avec son environnement, le système d'éclairage traite l'information en trois étapes successives :</p>
+        <ul>
+            <li><strong>ACQUÉRIR :</strong> Les capteurs mesurent des grandeurs physiques. Un capteur <strong>logique</strong> (ex: détecteur de présence PIR) ne possède que deux états (0 ou 1). Un capteur <strong>analogique</strong> (ex: photorésistance LDR) mesure une valeur variant continuellement (la luminosité en lux).</li>
+            <li><strong>TRAITER :</strong> Le microcontrôleur (cerveau de l'objet) reçoit ces signaux, les convertit en données numériques et applique le programme enregistré dans sa mémoire.</li>
+            <li><strong>COMMUNIQUER :</strong> L'interface réseau (puce Wi-Fi ou contrôleur Ethernet) convertit les informations traitées en trames réseau normalisées pour les envoyer aux autres machines ou sur des afficheurs.</li>
+        </ul>
+
+        <h3>3. Logique d'Asservissement : L'Algorithme</h3>
+        <p class="dys-text">L'algorithme définit le comportement automatisé du système. Pour éviter que les lumières ne s'allument et s'éteignent sans arrêt lorsque la luminosité oscille autour du seuil (phénomène de pompage), les ingénieurs programment des variables de contrôle, des temporisations (ex: maintenir l'éclairage actif 60 secondes après la dernière détection) et combinent les conditions à l'aide d'opérateurs logiques (Condition A <strong>ET</strong> Condition B).</p>
+    </div>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">ACT-5.1</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Dossier d'Investigation Technique & d'Analyse d'Ingénierie</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Classe :</strong> 5ème .............</p>
+                    <p><strong>Nom :</strong> ...................................</p>
+                    <p><strong>Prénom :</strong> ..............................</p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="exercice-box">
+            <h4>Activité 1 : Audit et Cartographie du Réseau Local de la Salle (S1 - Recherche : 60 min)</h4>
+            <p class="dys-text">Le système d'éclairage connecté de notre laboratoire de technologie doit communiquer son index de consommation énergétique en temps réel au serveur de gestion de l'intendance pour optimiser les coûts du collège.</p>
+            
+            <div class="sub-question">
+                <p class="dys-text"><strong>1.1. Analyse de la configuration IP locale (Sur votre poste de travail) :</strong><br>
+                Ouvrez l'invite de commande de votre ordinateur et saisissez la commande <code>ipconfig</code>. Notez précisément ci-dessous les paramètres réseau relevés :</p>
+                <p class="dys-text">Adresse IPv4 du poste : ...........................................................................................................<br>
+                Masque de sous-réseau : ...........................................................................................................<br>
+                Passerelle par défaut : .................=======================================================</p>
+            </div>
+
+            <div class="sub-question">
+                <p class="dys-text"><strong>1.2. Déduction et calcul de zone réseau (Calcul technique d'ingénierie) :</strong><br>
+                En analysant le masque de sous-réseau relevé (<code>255.255.255.0</code>), déterminez quelle est la partie commune de l'adresse IP partagée par l'ensemble des équipements de la pièce :<br>
+                La partie réseau commune est : ..........................................................................................................</p>
+            </div>
+
+            <div class="sub-question">
+                <p class="dys-text"><strong>1.3. Complètement du schéma d'infrastructure réseau :</strong><br>
+                Le technicien réseau a attribué des adresses IP statiques. Complétez le diagramme d'architecture ci-dessous : dessinez les liaisons physiques RJ45 manquantes vers le switch central et attribuez une adresse IP valide au boîtier d'éclairage afin qu'il puisse communiquer dans le même sous-réseau.</p>
+                
+                <div class="svg-container">
+                    <svg width="600" height="180" viewBox="0 0 600 180" style="background:#fcfcfc;">
+                        <rect x="235" y="65" width="130" height="50" fill="#2c3e50" rx="4"/>
+                        <text x="300" y="95" fill="#fff" font-size="11" font-family="Arial" text-anchor="middle" font-weight="bold">SWITCH CENTRAL</text>
+                        
+                        <rect x="20" y="15" width="135" height="40" fill="#7f8c8d" rx="3"/>
+                        <text x="87" y="32" font-size="10" font-family="Arial" text-anchor="middle" fill="#fff">Boîtier Éclairage IoT</text>
+                        <text x="87" y="48" font-size="9" font-family="Arial" text-anchor="middle" fill="#f1c40f">IP : 192.168.1. ...</text>
+                        
+                        <rect x="20" y="125" width="135" height="40" fill="#7f8c8d" rx="3"/>
+                        <text x="87" y="142" font-size="10" font-family="Arial" text-anchor="middle" fill="#fff">PC Élève N°04</text>
+                        <text x="87" y="158" font-size="9" font-family="Arial" text-anchor="middle" fill="#fff">IP : 192.168.1.104</text>
+                        
+                        <rect x="445" y="15" width="135" height="40" fill="#7f8c8d" rx="3"/>
+                        <text x="512" y="32" font-size="10" font-family="Arial" text-anchor="middle" fill="#fff">PC Gestion Intendance</text>
+                        <text x="512" y="48" font-size="9" font-family="Arial" text-anchor="middle" fill="#fff">IP : 192.168.1.10</text>
+
+                        <rect x="445" y="125" width="135" height="40" fill="#e67e22" rx="3"/>
+                        <text x="512" y="142" font-size="10" font-family="Arial" text-anchor="middle" fill="#fff" font-weight="bold">Serveur Central</text>
+                        <text x="512" y="158" font-size="9" font-family="Arial" text-anchor="middle" fill="#fff">IP : 192.168.1.250</text>
+                        
+                        <line x1="365" y1="90" x2="445" y2="145" stroke="#e67e22" stroke-width="2" stroke-dasharray="4"/>
+                        <line x1="365" y1="80" x2="445" y2="35" stroke="#2c3e50" stroke-width="2"/>
+                        
+                        <text x="300" y="160" font-size="11" fill="#e74c3c" text-anchor="middle" font-style="italic" font-weight="bold">[ Tracez les câbles RJ45 manquants vers le Switch ]</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="exercice-box">
+            <h4>Activité 2 : Analyse Fonctionnelle Structurée de la Chaîne d'Information (S2 - Investigation : 65 min)</h4>
+            <p class="dys-text">Pour que le système régule l'intensité lumineuse de manière éco-responsable, il doit convertir des grandeurs physiques de natures différentes en signaux informatiques exploitables.</p>
+
+            <div class="sub-question">
+                <p class="dys-text"><strong>2.1. Qualification scientifique de la nature des signaux d'entrée :</strong><br>
+                Analysez le comportement des deux capteurs du système d'éclairage. Cochez la case correspondant à la nature de l'information délivrée au système de contrôle :</p>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Composant Capteur à analyser</th>
+                            <th style="text-align:center;">Signal Logique (Tout Ou Rien)</th>
+                            <th style="text-align:center;">Signal Analogique (Variation continue)</th>
+                            <th>Justification scientifique de votre choix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height:45px;">
+                            <td><strong>Capteur de présence volumétrique (PIR)</strong></td>
+                            <td style="text-align:center;">⬜</td>
+                            <td style="text-align:center;">⬜</td>
+                            <td>.........................................................................................</td>
+                        </tr>
+                        <tr style="height:45px;">
+                            <td><strong>Cellule photorésistance (LDR)</strong></td>
+                            <td style="text-align:center;">⬜</td>
+                            <td style="text-align:center;">⬜</td>
+                            <td>.........................................................................................</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sub-question">
+                <p class="dys-text"><strong>2.2. Modélisation graphique de la chaîne d'information :</strong><br>
+                Complétez le schéma fonctionnel ci-dessous en plaçant les termes techniques exacts dans les cases appropriées (<em>Capteur PIR, Photorésistance LDR, Microcontrôleur, Émetteur radio Wi-Fi, Flux lumineux, Ordre de commande électrique</em>) :</p>
+                
+                <div class="svg-container">
+                    <svg width="650" height="160" viewBox="0 0 650 160">
+                        <rect x="10" y="40" width="150" height="80" fill="#2c3e50" rx="4"/>
+                        <text x="85" y="65" fill="#fff" font-size="12" font-family="Arial" font-weight="bold" text-anchor="middle">ACQUÉRIR</text>
+                        <text x="85" y="90" fill="#bdc3c7" font-size="10" font-family="Arial" text-anchor="middle">Matériels :</text>
+                        <text x="85" y="108" fill="#fff" font-size="9" font-family="Arial" text-anchor="middle">....................................</text>
+                        
+                        <line x1="-10" y1="80" x2="10" y2="80" stroke="#7f8c8d" stroke-width="2"/>
+                        <text x="0" y="30" font-size="9" font-family="Arial" text-anchor="middle" fill="#7f8c8d">Grandeur : ....................</text>
+                        
+                        <line x1="160" y1="80" x2="220" y2="80" stroke="#2980b9" stroke-width="3" marker-end="url(#arrow2)"/>
+                        <text x="190" y="70" font-size="9" font-family="Arial" text-anchor="middle" fill="#2980b9">Signaux</text>
+                        
+                        <rect x="220" y="40" width="150" height="80" fill="#2980b9" rx="4"/>
+                        <text x="295" y="65" fill="#fff" font-size="12" font-family="Arial" font-weight="bold" text-anchor="middle">TRAITER</text>
+                        <text x="295" y="90" fill="#eaf2f8" font-size="10" font-family="Arial" text-anchor="middle">Matériel :</text>
+                        <text x="295" y="108" fill="#fff" font-size="9" font-family="Arial" text-anchor="middle">....................................</text>
+                        
+                        <line x1="370" y1="80" x2="430" y2="80" stroke="#2980b9" stroke-width="3" marker-end="url(#arrow2)"/>
+                        <text x="400" y="70" font-size="9" font-family="Arial" text-anchor="middle" fill="#2980b9">Données</text>
+                        
+                        <rect x="430" y="40" width="150" height="80" fill="#2c3e50" rx="4"/>
+                        <text x="505" y="65" fill="#fff" font-size="12" font-family="Arial" font-weight="bold" text-anchor="middle">COMMUNIQUER</text>
+                        <text x="505" y="90" fill="#bdc3c7" font-size="10" font-family="Arial" text-anchor="middle">Matériel :</text>
+                        <text x="505" y="108" fill="#fff" font-size="9" font-family="Arial" text-anchor="middle">....................................</text>
+
+                        <line x1="580" y1="80" x2="640" y2="80" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="615" y="115" font-size="9" font-family="Arial" text-anchor="middle" fill="#7f8c8d">Vers la chaîne d'énergie</text>
+                        
+                        <defs>
+                            <marker id="arrow2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#2980b9"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercice-box">
+            <h4>Activité 3 : Développement de l'Algorithme de Commande Eco-Responsable (S3 - Pôle A/B : 70 min)</h4>
+            <p class="dys-text">Pour optimiser la consommation d'énergie, la règle d'allumage automatique est stricte : l'éclairage ne doit s'activer à pleine puissance que si une présence humaine est détectée <strong>ET</strong> si le niveau d'éclairement de la pièce descend en dessous d'un seuil critique de 250 lux.</p>
+            
+            <div style="background:#f4f6f7; padding:15px; border-radius:5px; margin-top:10px;">
+                <span class="badge-diff diff-expert">🚀 Défi d'Ingénierie Avancé (Inclusions Variables & Temporisation) :</span>
+                <p class="dys-text" style="margin:5px 0 0 0; font-size:11pt !important;">Modifiez l'algorithme pour intégrer un mode "veille". Si la luminosité est inférieure à 250 lux mais qu'aucune présence n'est détectée depuis plus de 3 minutes, l'intensité lumineuse doit baisser à 10% (via un signal PWM) au lieu de s'éteindre brutalement, assurant ainsi la sécurité des circulations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">COR-5.1</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Livre de Correction Officiel & Guide d'Évaluation du Maître</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Usage :</strong> Enseignant</p>
+                    <p><strong>Niveau de complexité :</strong> Élevé</p>
+                    <p><strong>Fiches :</strong> Corrigés S1-S3</p>
+                </td>
+            </tr>
+        </table>
+
+        <h3>Corrigé Activité 1 : Métrologie et Routage IP</h3>
+        <div class="correction-zone">
+            <p><strong>1.1 Relevés des configurations machines (Exemple de valeurs attendues) :</strong></p>
+            <ul>
+                <li>Adresse IP du poste élève : <code>192.168.1.104</code> (Doit obligatoirement être de la forme 192.168.1.X)</li>
+                <li>Masque de sous-réseau : <code>255.255.255.0</code></li>
+                <li>Passerelle réseau : <code>192.168.1.254</code> (Routeur du collège permettant de sortir du LAN)</li>
+            </ul>
+            <p><strong>1.2 Déduction de l'identifiant réseau :</strong><br>Le masque 255.255.255.0 fige les trois premiers octets. L'identifiant réseau commun à la classe est donc <strong>192.168.1.0</strong>.</p>
+            <p><strong>1.3 Câblage et adressage de l'objet IoT :</strong><br>Le boîtier d'éclairage IoT doit avoir un câble tracé directement vers un port disponible du switch central. Son adresse IP doit être unique, comprise entre <code>192.168.1.1</code> et <code>192.168.1.253</code>, en évitant les IP déjà attribuées (ex: <code>192.168.1.55</code>).</p>
+        </div>
+
+        <h3>Corrigé Activité 2 : Qualification des Signaux & Modélisation de la Chaîne</h3>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width:30%;">Composant Capteur</th>
+                    <th style="width:25%; color:#c0392b;">Nature du Signal</th>
+                    <th style="width:45%;">Justification scientifique et technique</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Détecteur volumétrique PIR</strong></td>
+                    <td style="font-weight:bold;">Logique / Tout Ou Rien</td>
+                    <td>Il ne renvoie que deux états possibles : 1 (présence détectée) ou 0 (aucune présence).</td>
+                </tr>
+                <tr>
+                    <td><strong>Photorésistance LDR</strong></td>
+                    <td style="font-weight:bold;">Analogique</td>
+                    <td>Sa résistance électrique varie de manière continue en fonction du nombre de lux reçus. Le signal prend une infinité de valeurs.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="correction-zone">
+            <p><strong>2.2 Alignement fonctionnel de la chaîne d'information :</strong><br>
+            • Grandeur d'entrée : Flux lumineux / Présence physique<br>
+            • Case <strong>ACQUÉRIR</strong> : Capteur PIR + Photorésistance LDR<br>
+            • Case <strong>TRAITER</strong> : Carte électronique à microcontrôleur (ex: ESP32)<br>
+            • Case <strong>COMMUNIQUER</strong> : Émetteur radio Wi-Fi ou puce Ethernet</p>
+        </div>
+
+        <h3>Corrigé Activité 3 : Structure Algorithmique Avancée (Défi Experts)</h3>
+        <div class="correction-zone">
+            <p><strong>Code de contrôle attendu avec intégration de la variable d'état de veille :</strong></p>
+            <pre style="font-family:'Courier New', monospace; font-size:0.9rem; font-weight:bold; color:#2c3e50; line-height:1.4;">
+Répéter indéfiniment :
+    Luminosite_Relevée = Lire_Entrée_Analogique(LDR)
+    Presences_Humaine   = Lire_Entrée_Logique(PIR)
+    
+    SI (Presences_Humaine == 1) ALORS
+        Chrono_Sans_Mouvement = 0  // Réinitialisation de la variable de temps
+        SI (Luminosite_Relevée < 250) ALORS
+            Fixer_Puissance_Eclairage(100) // Allumage à pleine puissance (Confort)
+        SINON
+            Fixer_Puissance_Eclairage(0)   // Lumière naturelle suffisante
+        FIN SI
+    SINON
+        // Traitement de la temporisation de veille en l'absence de mouvement
+        Attendre 1 seconde
+        Chrono_Sans_Mouvement = Chrono_Sans_Mouvement + 1
+        
+        SI (Chrono_Sans_Mouvement > 180 ET Luminosite_Relevée < 250) ALORS
+            Fixer_Puissance_Eclairage(10)  // Mode veille économique sécurisé (10% PWM)
+        SINON SI (Chrono_Sans_Mouvement > 180) ALORS
+            Fixer_Puissance_Eclairage(0)   // Extinction totale
+        FIN SI
+    FIN SI
+            </pre>
+        </div>
+    </div>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">EV-5.1</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Évaluation Individuelle Sommative - Transfert de Compétences</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Classe :</strong> 5ème .............</p>
+                    <p><strong>Nom :</strong> ...................................</p>
+                    <p><strong>Prénom :</strong> ..............................</p>
+                </td>
+            </tr>
+        </table>
+
+        <div style="text-align:right; font-weight:bold; font-size:1.3rem; margin-bottom:15px; color:#2c3e50;">Note de l'élève : ........ / 20</div>
+
+        <h4>Étude de Cas : Le Dispositif de Régulation et d'Optimisation Thermique d'une Serre Connectée</h4>
+        <p class="dys-text">Pour sensibiliser les élèves au développement durable, le collège installe une serre connectée pédagogique. Afin de préserver les cultures sans gaspiller d'énergie, un microcontrôleur gère l'ouverture d'un store motorisé et l'activation d'un extracteur d'air. Le système est connecté au réseau local de l'établissement pour centraliser les relevés d'humidité et de température.</p>
+
+        <p><strong>Question 1 : Architecture Réseau et Routage Informatique (6 points)</strong></p>
+        <div class="sub-question">
+            <p class="dys-text">1.1. La serre connectée utilise une adresse IP dynamique fournie automatiquement par un service du réseau du collège. Nommez ce protocole d'attribution automatique d'adresses (1.5 pts) :<br>
+            .................................................................................................................................................................................</p>
+        </div>
+        <div class="sub-question">
+            <p class="dys-text">1.2. Un technicien réseau souhaite fixer l'adresse IP de la serre de manière statique pour sécuriser la liaison. Le réseau du collège est configuré avec l'adresse <code>192.168.1.0</code> et le masque de sous-réseau <code>255.255.255.0</code>. Parmi les adresses ci-dessous, entourez l'adresse (ou les adresses) valide(s) que le technicien peut attribuer à la serre connectée (2.5 pts) :</p>
+            <p style="text-align:center; font-family:monospace; font-size:1.2rem;">a) 192.168.2.50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b) 192.168.1.300 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c) 192.168.1.85 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d) 192.168.1.0</p>
+        </div>
+        <div class="sub-question">
+            <p class="dys-text">1.3. Quel est l'appareil d'interconnexion réseau essentiel à installer dans la serre pour la relier en étoile au réseau de l'établissement ? Donnez son nom et son rôle précis (2 pts) :<br>
+            .................................................................................................................................................................................</p>
+        </div>
+
+        <p><strong>Question 2 : Nature des signaux et Chaîne d'Information (7 points)</strong></p>
+        <div class="sub-question">
+            <p class="dys-text">2.1. Le système comporte un <em>capteur de température ambiante</em> et un <em>bouton d'arrêt d'urgence de type coup de poing</em>. Qualifiez la nature du signal (analogique ou logique) délivré par chacun de ces composants (3 pts) :<br>
+            • Capteur de température : .......................................... &nbsp;&nbsp; • Bouton d'arrêt d'urgence : ..........................................</p>
+        </div>
+        <div class="sub-question">
+            <p class="dys-text">2.2. Complétez la chaîne d'information simplifiée de la serre connectée ci-dessous en associant chaque composant physique à sa fonction logique (4 pts) :<br>
+            Composants à placer : <em>Puce radio Wi-Fi, Capteur d'humidité du sol, Carte de contrôle à microcontrôleur.</em></p>
+            <p class="dys-text" style="line-height:2;">
+                ➔ Fonction <strong>ACQUÉRIR</strong> : .......................................................................................................................<br>
+                ➔ Fonction <strong>TRAITER</strong> : .......................................................................................................................<br>
+                ➔ Fonction <strong>COMMUNIQUER</strong> : .......................................................................................................................
+            </p>
+        </div>
+
+        <p><strong>Question 3 : Logique Algorithmique et Conditions de Sécurité (7 points)</strong></p>
+        <div class="sub-question">
+            <p class="dys-text">Pour éviter l'asphyxie des plantes, l'extracteur d'air doit se mettre en marche à 100% de sa puissance uniquement <strong>SI</strong> la température dépasse 32°C <strong>ET</strong> que le bouton d'arrêt d'urgence n'est pas activé (valeur = 0). Dans tous les autres cas, l'extracteur reste arrêté.</p>
+            <p class="dys-text">Rédigez l'algorithme de contrôle de l'extracteur en utilisant la structure conditionnelle complète (SI... ALORS... SINON...) :</p>
+            <div style="padding:15px; background:#f9f9f9; border:1px solid #bcbbbb; min-height:120px; font-family:monospace;" class="dys-text">
+                ............................................................................................................................................................<br><br>
+                ............................................................................................................................................................<br><br>
+                ............................................................................................................................................................<br><br>
+                ............................................................................................................................................................
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <table class="header-table">
+            <tr>
+                <td class="doc-code">COR-EV</td>
+                <td class="doc-title-area">
+                    <h1>Séquence 5.1 : Le collège connecté</h1>
+                    <h2>Grille Critérée et Barème de Correction de l'Évaluation</h2>
+                </td>
+                <td class="student-area">
+                    <p><strong>Session :</strong> 2026</p>
+                    <p><strong>Total :</strong> / 20 points</p>
+                    <p><strong>Validation :</strong> Cycle 4</p>
+                </td>
+            </tr>
+        </table>
+
+        <h3>Solutions Attendues & Barème Détaillé par Question</h3>
+
+        <h4>Question 1 : Réseaux et Routage Informatique (6 points)</h4>
+        <ul>
+            <li><strong>1.1 Protocole DHCP (1.5 pts) :</strong> Dynamic Host Configuration Protocol (L'acronyme ou le terme "DHCP" ou "attribution automatique" est exigé).</li>
+            <li><strong>1.2 Choix c) 192.168.1.85 (2.5 pts) :</strong> Justification des erreurs : Le choix <em>a</em> change de réseau (.2.), le choix <em>b</em> dépasse la valeur maximale d'un octet (255), le choix <em>d</em> désigne l'adresse du réseau lui-même.</li>
+            <li><strong>1.3 Le Switch / Commutateur (2 pts) :</strong> Il centralise les câbles réseau des machines de la serre et distribue les paquets de données vers le réseau du collège (0.5 pt pour le nom, 1.5 pts pour l'explication de la distribution des trames).</li>
+        </ul>
+
+        <h4>Question 2 : Chaîne d'Information du Système (7 points)</h4>
+        <ul>
+            <li><strong>2.1 Nature des signaux (3 pts) :</strong> Capteur de température = <strong>Analogique</strong> (1.5 pts) ; Bouton d'arrêt d'urgence = <strong>Logique / Tout Ou Rien</strong> (1.5 pts).</li>
+            <li><strong>2.2 Boîtes fonctionnelles (4 pts) :</strong> <br>
+                - Acquérir ➔ <strong>Capteur d'humidité du sol</strong> (1.5 pts)<br>
+                - Traiter ➔ <strong>Carte de contrôle à microcontrôleur</strong> (1.5 pts)<br>
+                - Communiquer ➔ <strong>Puce radio Wi-Fi</strong> (1 pt)
+            </li>
+        </ul>
+
+        <h4>Question 3 : Logique Algorithmique (7 points)</h4>
+        <div class="correction-zone">
+            <p><strong>Structure de code attendue (Une tolérance est accordée sur la formulation textuelle si la structure logique est respectée) :</strong></p>
+            <p style="font-family:'Courier New', monospace; font-size:1.1rem; font-weight:bold; color:#c0392b; line-height:1.6; margin-left:15px;">
+                SI (Température_Serre > 32 ET Bouton_Urgence == 0) ALORS (3 pts)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Activer_Extracteur_Air(100) (2 pts)<br>
+                SINON<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Activer_Extracteur_Air(0) (Désactiver) (2 pts)
+            </p>
+        </div>
+
+        <h3>Matrice d'Évaluation par Niveaux de Maîtrise de Compétences</h3>
+        <table class="content-table">
+            <thead>
+                <tr style="background-color:#2c3e50; color:#fff;">
+                    <th>Compétence Évaluée</th>
+                    <th>Insuffisant (D)</th>
+                    <th>Fragile (C)</th>
+                    <th>Satisfaisant (B)</th>
+                    <th>Très Bon (A)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>C1 : Architecture des Réseaux</strong></td>
+                    <td>Confond IP et masque, incapable d'identifier un choix valide.</td>
+                    <td>Identifie l'adresse IP valide mais ne sait pas expliquer le rôle du matériel d'interconnexion.</td>
+                    <td>Comprend les règles d'adressage IP du réseau local et identifie le switch.</td>
+                    <td>Maîtrise complète de la logique d'adressage (DHCP/Statique) et de la topologie réseau.</td>
+                </tr>
+                <tr>
+                    <td><strong>C2 : Flux d'Information</strong></td>
+                    <td>Confond le rôle des capteurs et des actionneurs dans la chaîne.</td>
+                    <td>Distingue analogique et logique mais commet des inversions dans la chaîne d'info.</td>
+                    <td>Chaîne d'information correctement complétée, signaux compris.</td>
+                    <td>Modélisation fonctionnelle irréprochable et parfaite qualification physique des signaux.</td>
+                </tr>
+                <tr>
+                    <td><strong>C3 : Algorithmique</strong></td>
+                    <td>Écrit une suite d'actions linéaires sans aucune condition de test.</td>
+                    <td>Utilise un bloc "SI" simple mais oublie la condition cumulative "ET" ou le cas "SINON".</td>
+                    <td>Structure algorithmique cohérente, les variables et conditions sont présentes.</td>
+                    <td>Algorithme d'ingénierie parfait, respect strict des opérateurs logiques et des affectations.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
